@@ -1,4 +1,4 @@
-package com.github.scache.introrxforandroid;
+package com.github.scache.introrxforandroid.api;
 
 import com.facebook.stetho.okhttp3.StethoInterceptor;
 
@@ -20,6 +20,7 @@ public class RetrofitManager {
 
                     mRetrofit = new Retrofit.Builder()
                             .client(client)
+                            .baseUrl("https://api.github.com")
                             .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                             .addConverterFactory(GsonConverterFactory.create())
                             .build();
