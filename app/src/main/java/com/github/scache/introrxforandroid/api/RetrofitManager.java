@@ -15,7 +15,7 @@ public class RetrofitManager {
             synchronized (RetrofitManager.class) {
                 if (mRetrofit == null) {
                     OkHttpClient client = new OkHttpClient.Builder()
-                            .addInterceptor(new StethoInterceptor())
+                            .addNetworkInterceptor(new StethoInterceptor())
                             .build();
 
                     mRetrofit = new Retrofit.Builder()
